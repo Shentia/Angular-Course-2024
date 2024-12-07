@@ -1,0 +1,11 @@
+<div class="oCart--product--container">
+  <app-search (searchTextChanged)="setSearchText($event)"></app-search>
+  <app-product-list
+    [searchText]="searchText"
+    #productListComponent
+  ></app-product-list>
+  <app-product-detail
+    *ngIf="productListComponent.selectedProduct"
+    [productListComp]="productListcomponent"
+  ></app-product-detail>
+</div>

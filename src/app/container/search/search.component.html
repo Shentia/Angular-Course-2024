@@ -1,0 +1,11 @@
+<div class="oCart--search--product">
+  <input class="oCart-search-product-input" #searchInputText />
+  <button class="btn btn-search" (click)="updateSearchText()">Search</button>
+</div>
+<div class="-search-result-for">
+  <p *ngIf="searchText != ''">
+    <strong>Search result for:</strong> {{ searchText }}
+  </p>
+</div>
+<!-- falsy -->
+<!-- false , '', null,undefined, 0 -->

@@ -1,0 +1,21 @@
+<app-filter
+  [all]="totalProductsCount"
+  [inStock]="totalProductsInStock"
+  [outOfStock]="totalProductsNotInStock"
+  (selectedFilterRadioButtonChanged)="onFilterChanged($event)"
+></app-filter>
+
+<div class="oCart--products--container">
+  <div *ngFor="let prod of products" (click)="selectedProduct = prod">
+    <app-product
+      [product]="prod"
+      *ngIf="searchText === '' || prod.name.toLowerCase().includes(searchText)"
+    ></app-product>
+  </div>
+</div>
+
+<!--
+*ngIf="
+        selectedFilterRadioButton === 'all' ||
+        prod.is_in_inventory.toString() === selectedFilterRadioButton
+      " -->
