@@ -6,12 +6,13 @@
 ></app-filter>
 
 <div class="oCart--products--container">
-  <div *ngFor="let prod of products" (click)="selectedProduct = prod">
+  <ng-container *ngFor="let prod of products" >
     <app-product
       [product]="prod"
       *ngIf="searchText === '' || prod.name.toLowerCase().includes(searchText)"
+      (click)="selectedProduct = prod"
     ></app-product>
-  </div>
+  </ng-container>
 </div>
 
 <!--
